@@ -22,7 +22,7 @@ async def get_posts():
     return {"data": "This is your posts"}
 
 
-@app.post("/createposts")
+@app.post("/posts")
 async def create_posts(new_post: Post):
     print(new_post.published, new_post.rating)
     return {"data": "data"}
