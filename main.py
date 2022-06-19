@@ -16,4 +16,4 @@ async def get_posts():
 @app.post("/createposts")
 async def create_posts(payLoad: dict = Body(...)):
     print(payLoad)
-    return {"message": "Successfully created post"}
+    return {"new_post": f"Title: {payLoad.get('title')}, content: {payLoad.get('content')}"}
