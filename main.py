@@ -38,6 +38,6 @@ async def create_posts(post: Post):
     return {"data": post_dict}
 
 @app.get("/posts/{id}")  # id: is a path parameter
-def get_post(id):
+def get_post(id: int):  # automatic validation
     post = find_post(int(id))
     return {"post_detail": post}
