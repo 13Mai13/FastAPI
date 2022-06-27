@@ -32,3 +32,8 @@ async def create_posts(post: Post):
     post_dict['id'] = randrange(0, 1000000000)
     my_posts.append(post_dict)
     return {"data": post_dict}
+
+@app.get("/posts/{id}")  # id: is a path parameter
+def get_post(id):
+    print(id)
+    return {"post_detail": f"Here is post : {id}"}
