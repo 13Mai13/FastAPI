@@ -12,6 +12,9 @@ class Post(BaseModel):
     published: bool = True  # Default value
     rating: Optional[int] = None
 
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1}]
+
+
 @app.get("/")
 async def root():
     return {'message': 'Hello World v2'}
