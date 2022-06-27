@@ -6,7 +6,7 @@ FastAPI Tutorial python version `3.10.3`
 ### Run in local
 
 ```
-uvicorn main:app --reload
+python -m uvicorn main:app --reload
 ```
 
 The changes automatically reload.

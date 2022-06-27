@@ -12,7 +12,8 @@ class Post(BaseModel):
     published: bool = True  # Default value
     rating: Optional[int] = None
 
-my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1}]
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
+            {"title": "fav food", "content": "I like pizza ", "id": 2}]
 
 
 @app.get("/")
@@ -22,7 +23,7 @@ async def root():
 
 @app.get("/posts")
 async def get_posts():
-    return {"data": "This is your posts"}
+    return {"data": my_posts}
 
 
 @app.post("/posts")
