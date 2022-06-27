@@ -25,6 +25,10 @@ async def root():
 async def get_posts():
     return {"data": my_posts}
 
+def find_post(id):
+    for p in my_posts:
+        if p['id'] == id:
+            return p
 
 @app.post("/posts")
 async def create_posts(post: Post):
@@ -35,5 +39,5 @@ async def create_posts(post: Post):
 
 @app.get("/posts/{id}")  # id: is a path parameter
 def get_post(id):
-    print(id)
-    return {"post_detail": f"Here is post : {id}"}
+    post = find_post(int(id))
+    return {"post_detail": post}
