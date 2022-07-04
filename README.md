@@ -5,8 +5,15 @@ FastAPI Tutorial python version `3.10.3`
 
 ### Run in local
 
+Plain `main.py` in root directory:
 ```
-python -m uvicorn main:app --reload
+python -m uvicorn main:app --reload 
+```
+
+If you put the code inside an `app` folder:
+
+```
+python -m uvicorn app.main:app --reload 
 ```
 
 The changes automatically reload.
