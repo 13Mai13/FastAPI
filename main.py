@@ -42,4 +42,5 @@ def get_post(id: int, response:Response):  # automatic validation
     post = find_post(int(id))
     if not post:
         response.status_code = status.HTTP_404_NOT_FOUND
+        return {'message': f"post with id :{id} was not found"}
     return {"post_detail": post}
